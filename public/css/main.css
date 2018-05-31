@@ -1,0 +1,15 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: left;
+}
+#headshot {
+    width: 500px;
+}
+
+input {
+    width: 50%;
+    
+}
