@@ -1,15 +1,66 @@
 body {
-  padding-top: 50px;
+    padding-top: 50px;
+    font-family: 'Roboto', sans-serif;
 }
 .starter-template {
   padding: 40px 15px;
   text-align: left;
 }
-#headshot {
-    width: 500px;
-}
 
 input {
-    width: 50%;
-    
+    width: 50%;  
+}
+
+.navbar {
+    background-color: #FF0000;
+    border-color: #FF0000;
+    color: #fff;
+}
+
+#links {
+    color: #fff;
+    text-decoration: none;
+}
+.button {
+    background-color: #FF0000;
+}
+h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 8em;
+    color: #282828;
+}
+
+label { 
+    font-size: 2em;
+}
+
+a {
+    color: #282828;
+    text-decoration: none;
+}
+#custom {
+    color: #fff;
+    background-color: #FF0000;
+}
+
+.live {
+    color: #fff;
+    background-color: #282828; 
+}
+
+#plusminus {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+#submit-button {
+    max-width: 100px;
+    min-width: 100px;
+    background-color: #fff;
+    border-color: #ff0000;
+    color: #FF0000;
+/*
+    background-color: #FF0000;
+    border-color: #FF0000;
+*/
+
 }

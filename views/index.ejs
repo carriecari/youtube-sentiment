@@ -10,34 +10,39 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>CRLM</title>
+    <title>YouTube +-</title>
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/main.css" rel="stylesheet">
+    <!-- Custom fonts -->
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans|Roboto:500" rel="stylesheet">
+    
+    <!--Bootstrap Required-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+
 
   </head>
 
   <body>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="custom">
       <div class="container">
-        <div class="navbar-header">
+        <div class="navbar-header" id="custom">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">CPSC course picker</a>
+          <a class="navbar-brand" href="#" id="custom">Youtube <span id="plusminus">+-</span></a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#wan">Button1</a></li>
-            <li><a href="#too">Button2</a></li>
-            <li><a href="#phree">Button3</a></li>
+            <li class="live" id="links"><a href="#wan">Analyze!</a></li>
+            <li><a href="#too" id="links">How it Works</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -46,22 +51,18 @@
     <div class="container">
 
       <div class="starter-template">
-          <h2>UBC CPSC Course Picker</h2>
-          Welcome to the CPSC course picker. Choose which functionality you want to use. Enter in courses you have taken/want to take.
-          <br>
-          <div class="radio">
-  <label><input type="radio" name="optradio">What can I take?</label>
-</div>
-<div class="radio">
-  <label><input type="radio" name="optradio">What do I need to take...</label>
-</div>
+          <h2>YouTube +-</h2>
+          Welcome to the YouTube +- (plus minus). This is a sentiment analysis application that uses <a href ="https://www.npmjs.com/package/Sentimental">SentiMental</a>.
+          <p>
+            <form action="/submit-url" method="post">
+        <div class="form-group">
+              <label for="taken">Enter YouTube video link:</label>
+              <input name="video" type="text" class="form-control">
+          </div>
+        <input type="submit" class="btn btn-primary btn-lg" value="Submit" id="submit-button"/>
+    </form>
 
           
-          <div class="form-group">
-  <label for="taken">Enter classes here:</label>
-  <input type="text" class="form-control" id="taken">
-</div>
-
       </div>
 
     </div><!-- /.container -->
