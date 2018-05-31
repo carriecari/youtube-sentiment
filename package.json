@@ -1,0 +1,24 @@
+{
+  "name": "youtube-sentiment",
+  "version": "1.0.0",
+  "description": "youtube sentiment web app",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carriecari/youtube-sentiment.git"
+  },
+  "keywords": [
+    "npm",
+    "nodejs",
+    "youtube"
+  ],
+  "author": "Carrie Lam <lamklcarrie@gmail.com> (carrielam.me)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carriecari/youtube-sentiment/issues"
+  },
+  "homepage": "https://github.com/carriecari/youtube-sentiment#readme"
+}
