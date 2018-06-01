@@ -1,26 +1,36 @@
-const express = require('express')
-const path = require('path')
-const PORT = process.env.PORT || 5000
-const app = express()
+/*eslint node:true */
+/*jslint node:true */
+
+var Sentiment = require('sentiment');
+var sentiment = new Sentiment();
+var result = sentiment.analyze('Cats are stupid.');
+
+var videoURL = "";
 
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-app.get('/', function (req, res)  {
-       res.render('index');
-})
+//https://www.youtube.com/watch?v=SkyoxlXimvY
 
-app.post('/submit-data', function (req, res) {
-    res.send('POST Request');
-});
+//Takes in user input and returns xml page
+var parseVideoID = function(req) {
+    var re = /https\:\/\/www\.youtube\.com\/watch\?v\=(.*)/i;
+    var reg = new RegExp(re);
+    var isMatched = reg.test(req);
 
-app.put('/update-data', function (req, res) {
-    res.send('PUT Request');
-});
+    if (isMatched) {
+        
+        let videoIDinitial = reg.exec(req);
+        var videoID = videoIDinitial[1];
+        var xmlURL = String("https://www.youtube.com/api/timedtext?lang=en&v=") + videoID;
+        console.log(xmlURL);
+                              
+      return xmlURL;
+      
+  } else {
+      return "error";
+  }
+    
 
-app.delete('/delete-data', function (req, res) {
-    res.send('DELETE Request');
-});
+}
 
-app.listen(PORT, () => console.log(`Listening on ${ PORT }`))
+
+module.exports = parseVideoID;
