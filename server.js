@@ -21,18 +21,18 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.get('/', function (req, res)  {
        res.render('index');
+    
 })
 
-
-
 app.post('/', function(req, res){
-	   var urltext = req.body.video;
+    var urltext = req.body.video;
     console.log(urltext);
     var ismatched = reg.test(urltext);
     console.log(ismatched);
-    var xmlUrl = parseVideoID(urltext);
-
-    res.render('index');
+    var sentimentAnalysis = parseVideoID(urltext);
+//    printToPage(sentimentAnalysis.score, sentimentAnalysis.words);
+    //res.render('index');
+    res.end();
 	});
 
 app.put('/update-data', function (req, res) {
