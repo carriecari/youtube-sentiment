@@ -6,7 +6,7 @@
     </head>
 
     <body>
- <% include header.ejs %>
+        <% include header.ejs %>
 
         <div class="container">
 
@@ -22,8 +22,47 @@
                     <input type="submit" name="video1" class="btn btn-primary btn-lg" value="Submit" id="submit-button"/>
                 </form>
                 <div id="video_info">
-                <p>Your video: <%= videolink %></p>
-                    <p>Video +- Sentiment: <%= score %></p>
+                    <table style="width:100%">
+                        <tr>
+                            <th>Video +- Sentiment Score</th>
+                            <th>Comparative score </th> 
+                            <th>(Some) Postive words</th>
+                            <th>(Some) Negative words</th>
+                        </tr>
+                        <tr>
+                            <td><%= score %></td>
+                            <td><%= comp %></td>
+                            <td><ul>
+                                <% for (var i = 0; i < Math.min(5, neg.length); i++) { %>
+                                <li><%= pos[i] %></li>
+                                <% }; %>
+                                <li>...</li>
+                                </ul>
+                            </td>
+                            <td>                <ul>
+                                <% for (var i = 0; i < Math.min(5, neg.length); i++) { %>
+                                <li><%= neg[i] %></li>
+                                <% }; %>
+                                <li>...</li>
+                                </ul></td>
+
+                        </tr>
+                    </table>
+
+                </div>
+                <div><p>
+                    <u><strong>Score</strong></u> is calculated by adding the sentiment values of recongnized words. More negative scores could mean more negative words used or there are more strongly negative words used compared to positive valued words.
+                    </p>
+                    <p>
+                    <u><strong>Comparative</strong></u> score is the sum of all the values of the words divided by the number of recognized words. A score closer to 0 means it's more neutral.
+                    </p>
+                    <p>
+                    <u><strong>Positive words</strong></u> is the list of postive words that were found in AFINN list.
+                    </p>
+                    <p>
+                    <u><strong>Negative words</strong></u> is the list of negative words that were found in AFINN list.
+                    </p>
+
                 </div>
 
             </div>
@@ -39,8 +78,5 @@
         <script src="https://cdn.jsdelivr.net/react/0.14.0-rc1/react.js"></script>
         <script src="https://cdn.jsdelivr.net/react/0.14.0-rc1/react-dom.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <footer>
-        <% include footer.ejs %>
-        </footer>
     </body>
 </html>

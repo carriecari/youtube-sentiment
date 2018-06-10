@@ -64,9 +64,16 @@ app.post('/', function(req, res){
     
     main.parseVideoID(req, res).then(function(result) {
         var score = result.score;
+        var pos = result.positive;
+        var neg = result.negative;
+        var comp = (result.comparative).toFixed(4);
+        
         res.render('video', {
             videolink: urltext,
             score: score,
+            pos: pos,
+            neg: neg,
+            comp: comp,
         })
         res.end();
     })
