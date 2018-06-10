@@ -4,7 +4,6 @@ const PORT = process.env.PORT || 5000
 const app = express()
 const https = require('https')
 var bodyParser = require('body-parser')
-var indexRouter = require('./routes/index')
 
 var main = require('./main.js')
 var parseVideoID = require('./main.js')
