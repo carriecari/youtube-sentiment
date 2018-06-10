@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <% include head.ejs %>
+    </head>
+
+    <body>
+ <% include header.ejs %>
+
+        <div class="container">
+
+            <div class="starter-template">
+                <h2>YouTube +-</h2>
+                Welcome to the YouTube +- (plus minus). This is a sentiment analysis application that uses <a href ="https://www.npmjs.com/package/Sentimental">SentiMental</a>.
+                <p>
+                <form method="post">
+                    <div class="form-group">
+                        <label for="taken">Enter YouTube video link:</label>
+                        <input name="video" id="input" type="text" class="form-control">
+                    </div>
+                    <input type="submit" name="video1" class="btn btn-primary btn-lg" value="Submit" id="submit-button"/>
+                </form>
+                <div id="video_info">
+                <p>Sorry your request could not be processed right now. Try again later!</p>
+    
+                </div>
+
+            </div>
+
+        </div><!-- /.container -->
+
+
+        <!-- Bootstrap core JavaScript
+================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+        <script src="https://cdn.jsdelivr.net/react/0.14.0-rc1/react.js"></script>
+        <script src="https://cdn.jsdelivr.net/react/0.14.0-rc1/react-dom.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <footer>
+        <% include footer.ejs %>
+        </footer>
+    </body>
+</html>
