@@ -48,26 +48,7 @@ var parseVideoID = function(req, res) {
 
 };
 
-//var parseXML = function(xml) {
-//    parser.on('error', function(err) { console.log('Parser error', err); });
-//
-//    var data = '';
-//    https.get(xml, function(res) {
-//        if (res.statusCode >= 200 && res.statusCode < 400) {
-//            res.on('data', function(data_) { data += data_.toString(); });
-//            res.on('end', function() {
-//                //transcript text
-//                //console.log('data', data);
-//                var sentiment = new Sentiment();
-//
-//                sentimentObj = sentiment.analyze(data);
-//                var score = result.score;
-//                console.log(score);
-//                console.log("in parse xml")
-//                return score;
-//            });
-//        }});
-//}
+
 module.exports.parseVideoID = parseVideoID;  
 
 
