@@ -29,7 +29,7 @@ var ContactForm = React.createClass({
   render: function() {
     var oldContact = this.props.value;
     var onChange = this.props.onChange;
-    
+
     return (
       React.createElement('form', {className: 'ContactForm'},
         React.createElement('input', {
